@@ -1,0 +1,63 @@
+.listItem{
+    text-transform: capitalize;
+    background-color: lightgray;
+    margin: 5px 5px 5px 0px;
+    margin-left: -15px;
+    width: 100%;
+    display: flex;
+    /* animation-name: example;
+    animation-duration: 4s; */
+    position: relative;  
+}
+
+
+ /* @keyframes example {
+    0%   { left:10px; top:0px;}
+    25%  { left:0px; top:0px;}
+}  */
+
+.listItem:hover > .deleteBtn {
+    /* display: block; */
+    width: 30px;   
+}
+
+.listItem:hover  .deleteIcon {
+    display: block;
+    /* width: 27px;    */
+}
+
+.listCheck{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.listName{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.deleteBtn{
+    background-color: #E8485F;
+    color: white;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 26px;
+    padding: 0 0px;
+    width: 0px;
+    right: 0;
+    /* display: none; */
+    
+    transition-property: width;
+    transition-duration: 0.7s;
+}
+
+.deleteIcon{
+    display: none;
+    text-align: center;
+    transition-property: display;
+    transition-duration: 0.7s;
+}

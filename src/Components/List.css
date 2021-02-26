@@ -1,0 +1,63 @@
+/* .todo{
+    /* text-align: center; */
+    /* margin-top: 25%; */
+    
+/* } */ 
+.todo{
+    margin-top: 100px;
+}
+.todo .todoImg{
+    margin-left: 100px;
+    width: 78px;
+    height: 50px;
+
+}
+          
+.todo .todopera{
+    margin-left: 55px;
+    font-size: 12px;
+}
+
+
+.pandingItem{
+    margin: 15px 0px -13px 0px;
+    padding-left: 20px;
+    font-size: 13px;
+    /* display: none; */
+}
+
+.todoList{
+    list-style-type: none; 
+    
+    }
+
+.addBtn{
+    padding: 0px 15px 0px 15px ;   
+    color: white;
+    /* background-color: #5D4DFA; */
+    background-color: #9b969b;
+    border: none;
+    outline: none;
+    /* height: 35px; */
+}
+
+.listInput{
+    width: 75%;
+    height: 30px;
+    font-size: 12px;
+}
+
+.listForm{
+    margin-top: 5%;
+    padding: 20px 0 0 17px;
+    display: flex;
+}
+
+.listItem{
+    text-transform: capitalize;
+}
+
+/* .middle{
+    overflow-y: scroll;
+    height: 170px;
+} */

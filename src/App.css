@@ -1,0 +1,15 @@
+body{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  /* position: relative; */
+}
+
+.header{
+  background-color: white;
+  /* position: relative; */
+  height: 450px;
+  width: 300px;
+}
+
