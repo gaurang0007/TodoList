@@ -3,7 +3,7 @@ import './Header.css';
 
 const Header = () => {
     let currDate = new Date();
-    let currentDate = currDate.getDay() + "-" + currDate.getMonth() + "-" + currDate.getFullYear();
+    let currentDate = currDate.getDay() + "-" + parseInt(currDate.getMonth()+1)  + "-" + currDate.getFullYear();
 
     var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 

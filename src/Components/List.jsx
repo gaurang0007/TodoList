@@ -8,7 +8,8 @@ import ShowCompleted from "./ShowCompleted";
 const List = () => {
   const [inputList, setInputList] = useState("");
   const [items, setItems] = useState([]);
-  // const [completedList, setCompletedList] = useState(["123"]);
+ 
+  let CompletedFalse = items.filter((value) => !value.Completed);
 
   const inputChange = (e) => {
     setInputList(e.target.value);
@@ -29,17 +30,7 @@ const List = () => {
     }
     setInputList("");
   };
-  // const afterChecked = (id) => {
-  //   // console.log('deleted');
-  //   setCompletedList((oldItems) => {
-  //     return oldItems.filter((arrEle, index) => {
-  //       if( index !== id){
-  //         console.log(id);
-  //         return id;
-  //       };
-  //     });
-  //   });
-  // }
+ 
 
   const deleteItem = (id) => {
     // console.log('deleted');
@@ -50,14 +41,11 @@ const List = () => {
       });
     });
   };
-
-  
+ 
   const checked = (id) => {
     
     let temp = [...items];
-
     temp[id].Completed = true;
-
     setItems(temp);
   };
 
@@ -78,8 +66,8 @@ const List = () => {
 
   
   //  let log = items.map(todo => todo.Completed)
-   console.log("p render");
-  //  console.log("items :- ",checked);
+  //  console.log("p render");
+  //  console.log("length", items.length);
   return (
     <>
       <form className="listForm">
@@ -102,14 +90,16 @@ const List = () => {
         </button>
       </form>
 
-      {items.length > 0 ? (
+      {CompletedFalse.length > 0 ? (
         <div>
           <div className="pandingItem">
             <p>You have {items.length} panding item</p>
           </div>
           <div className="middle">
+        
             <ul className="todoList">
-              {items.map((obj, index) => {
+              {CompletedFalse.map((obj, index) => {
+
                 return (
                   <TodoList
                     text={obj.List}
@@ -122,6 +112,8 @@ const List = () => {
               })}
             </ul>
 
+            
+
             <Footer allItem={clearAll}  items1={items} setItems={setItems}/>
           </div>
 
@@ -132,6 +124,7 @@ const List = () => {
           <p className="todopera">Time to chill You have no todos.</p>
         </div>
       )}
+      
       
     </>
   );
