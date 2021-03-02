@@ -1,68 +1,86 @@
-.footerClear{
-    display: flex;
-    left: 48%;
-    font-size: small;
-    position: absolute;
-    bottom: 15%;
-    cursor: pointer;   
+.footerClear {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* left: 48%; */
+  font-size: small;
+  position: absolute;
+  bottom: 15%;
+  cursor: pointer;
 }
 
 .clearAll {
-    display: inline-block;
-    margin-left: 21px;
-  }
-  
-  .clearAll::after {
-    content: '';
-    width: 0px;
-    height: 2px;
-    display: block;
-    background: #f06885;
-    transition: 300ms;
-  }
-  
-  .clearAll:hover::after {
-    width: 100%;
-  }
+  display: inline-block;
 
-.footerClearShow{
-    display: flex;
-    justify-content: center;
-    /* left: 44%;  */
-    margin-left: 61px;
-    font-size: small;
-    position: absolute;  
-    bottom: 9%;
-    cursor: pointer;
+  margin-left: 25px;
+}
+
+.clearAll::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: #f06885;
+  transition: 300ms;
+}
+
+.clearAll:hover::after {
+  width: 100%;
+}
+
+.footerClearShow {
+  display: flex;
+  justify-content: center;
+  /* left: 44%;  */
+  /* margin-left: 55px; */
+  width: inherit;
+  font-size: small;
+  position: absolute;
+  bottom: 9%;
+  cursor: pointer;
 }
 
 .showCompleted1 {
-    display: inline-block;
-  }
-  
-  .showCompleted1::after {
-    content: '';
-    width: 0px;
-    height: 2px;
-    display: block;
-    background: #f06885;
-    transition: 300ms;
-  }
-  
-  .showCompleted1:hover::after {
-    width: 100%;
-  }
-
-  .todoList1{
-    display: none;
-  }
-
-  .completedTask{
-    margin: 15px 0px -13px 0px;
-    padding-left: 20px;
-    font-size: 13px;
-    /* display: none; */
-
+  display: inline-block;
 }
 
-  
+.showCompleted1::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: #f06885;
+  transition: 300ms;
+}
+
+.showCompleted1:hover::after {
+  width: 100%;
+}
+
+.todoList1 {
+  display: none;
+}
+
+.completedTask {
+  margin: 15px 0px -13px 0px;
+  padding-left: 20px;
+  font-size: 13px;
+  /* display: none; */
+}
+
+.HideCompleted1 {
+  display: inline-block;
+}
+
+.HideCompleted1::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: #f06885;
+  transition: 300ms;
+}
+
+.HideCompleted1:hover::after {
+  width: 100%;
+}

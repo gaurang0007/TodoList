@@ -1,26 +1,24 @@
-.headerContant{
-    
-    color: #f06885;
-    padding: 50px 0 0 17px;
-    font-weight: bold;
-    line-height: 3px;
+.headerContant {
+  color: #f06885;
+  padding: 50px 0 0 17px;
+  font-weight: bold;
+  line-height: 3px;
 }
 
-.headerBtn{
-    padding: 1px 12px 3px 12px;
-    color: white;
-    background-color: #5D4DFA;
-    border: none;
-    outline: none;
-    font-size: 20px;
+.headerBtn {
+  padding: 1px 12px 3px 12px;
+  color: white;
+  background-color: #5d4dfa;
+  border: none;
+  outline: none;
+  font-size: 20px;
 }
 
-.headerInput{
-    width: 74%;
-    padding: 5px;
+.headerInput {
+  width: 74%;
+  padding: 5px;
 }
 
-.headerForm{
-    margin-top: 10%;
+.headerForm {
+  margin-top: 10%;
 }
-

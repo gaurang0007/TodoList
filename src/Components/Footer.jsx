@@ -1,71 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 import ShowCompleted from "./ShowCompleted";
 
 const Footer = (props) => {
-  // console.log(props.items1  );
-console.log(props.items);
-
+  const [isSwitch, setisSwitch] = useState(true);
   let newfilter = props.items1.filter((value) => value.Completed);
-  console.log(newfilter);
-
-  // console.log("child render");
 
   const onShowCompleted = () => {
-    document.getElementById("changeCss").style.display = "block";
-    document.getElementById("Hide").style.display = "block";
-    document.getElementById("Show").style.display = "none";
+    if (isSwitch) {
+      setisSwitch(false);
+      document.getElementById("changeCss").style.display = "block";
+    } else {
+      setisSwitch(true);
+      document.getElementById("changeCss").style.display = "none";
+    }
   };
 
-  const onHideCompleted = () => {
-    document.getElementById("Show").style.display = "block";
-    document.getElementById("Hide").style.display = "none";
-    document.getElementById("changeCss").style.display = "none";
-  }
-
-  let num = (newfilter.length / props.items1.length)*100
+  let num = (newfilter.length / props.items1.length) * 100;
   let percentage = num.toFixed(2);
 
-  
   return (
     <>
-   
-    <div className="middle">
-      <ul className="todoList1" id="changeCss">
-      { newfilter.length > 0   && <p className="completedTask">Completed Tasks : {percentage}%</p> }
-        {newfilter.map((obj, index) => {
-          return (
-            <ShowCompleted
-              text={obj.List}
-              key={Math.random()}
-              id={index}
-              arr = {newfilter}
-           
-            />
-          );
-        })}
-      </ul>
-    </div>
+      <div className="middle">
+        <ul className="todoList1" id="changeCss">
+          {newfilter.length > 0 && (
+            <p className="completedTask">Completed Tasks : {percentage}%</p>
+          )}
+          {props.items1.map((obj, index) => {
+            if (obj.Completed === true)
+              return (
+                <ShowCompleted
+                  text={obj.List}
+                  key={Math.random()}
+                  id={index}
+                  arr={newfilter}
+                  deleteItem={props.deleteItem}
+                  unchecked={props.unchecked}
+                />
+              );
+          })}
+        </ul>
+      </div>
 
       <div className="footerClearShow">
-        {newfilter.length > 0 ? (
-          <p className="showCompleted1" onClick={onShowCompleted} id="Show">
-            Show Completed
-          </p>
-        ) : (
-            ""
-          )}
-          {newfilter.length > 0 ? (
-          <p className="ShowCompleted1" onClick={onHideCompleted} id="Hide" style={{display:'none'}}>
-            Hide Completed
-          </p>
-        ) : (
-            ""
-          )} 
+        {newfilter.length > 0 && (
+          <div onClick={onShowCompleted} id="Show">
+            {isSwitch === true ? (
+              <p className="showCompleted1">Show Completed</p>
+            ) : (
+              <p className="showCompleted1">Hide Completed</p>
+            )}
+          </div>
+        )}
 
-        <div onClick={props.allItem}>
-          <p className="clearAll">Clear All</p>
-        </div>
+        <p className="clearAll" onClick={props.allItem}>
+          Clear All
+        </p>
       </div>
     </>
   );

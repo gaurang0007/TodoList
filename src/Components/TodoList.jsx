@@ -6,17 +6,31 @@ const TodoList = (props) => {
   return (
     <>
       <div className="listItem">
-      <input
+        <input
           className="listCheck form-check-input"
           type="checkbox"
-          onClick={() => {
+          onChange={() => {
             props.checked(props.id);
           }}
         />
 
-        <li className="listName" key={props.index}> 
+        <li className="listName" key={props.index}>
           {props.text}
         </li>
+
+        {/* <label className="container">
+          <li className="listName" key={props.index}>
+            {props.text}
+          </li>
+          <input
+            type="checkbox"
+            // checked="checked"
+            onChange={() => {
+              props.checked(props.id);
+            }}
+          />
+          <span className="checkmark"></span>
+        </label> */}
 
         <div className="deleteBtn">
           <div className="deleteIcon">
