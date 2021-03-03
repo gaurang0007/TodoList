@@ -12,7 +12,6 @@
 .clearAll {
   display: inline-block;
 
-  margin-left: 25px;
 }
 
 .clearAll::after {
